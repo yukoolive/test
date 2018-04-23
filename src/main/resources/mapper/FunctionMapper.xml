@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yesx.ssm.mapper.FunctionMapper" >
+
+    <select id="selectFunctionsByRoleId"  resultType="Function">
+        select
+        f.*
+        from
+        function f
+        where f.id in
+        (select distinct function_id
+                 from role_function
+                 where role_id=#{roleId})
+    </select>
+
+    <select id="selectAllFunctions"  resultType="Function">
+        select * from function
+    </select>
+</mapper>
