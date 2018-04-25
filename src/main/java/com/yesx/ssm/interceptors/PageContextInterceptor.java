@@ -27,8 +27,9 @@ public class PageContextInterceptor extends HandlerInterceptorAdapter {
 //		if (basePath.endsWith("/")) {
 //			basePath = basePath.substring(0, basePath.length()-1);
 //		}
-		request.setAttribute("ctx", path);
-		request.setAttribute("themePath", path+"/static/css/skin/southnet");
+		request.setAttribute("ctx", path+"/test");
+		System.out.println("---------------------------ctx:"+request.getAttribute("ctx"));
+		//request.setAttribute("themePath", path+"/static/css/skin/southnet");
 		
 //		String theme = getTheme(request);
 //		// 设置主题名称

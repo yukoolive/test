@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @SpringBootApplication
 @ServletComponentScan
 @EnableTransactionManagement//如果mybatis中service实现类中加入事务注解，需要此处添加该注解
-@MapperScan("com.yesx.ssm.maper")//扫描的是mapper.xml中namespace指向值的包位置
+@MapperScan("com.yesx.ssm.mapper")//扫描的是mapper.xml中namespace指向值的包位置
 public class SsmApplication {
 
 	public static void main(String[] args) {

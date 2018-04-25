@@ -24,5 +24,8 @@
 <shiro:hasPermission name="/test3">
     <h3>测试权限3</h3>
 </shiro:hasPermission>
+<shiro:hasPermission name="/solrUser/list">
+    <a href="/test/solrUser/list" onclick="alertCtx()">搜索引擎</a>
+</shiro:hasPermission>
 </body>
 </html>
