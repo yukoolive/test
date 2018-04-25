@@ -9,11 +9,11 @@
 <html>
 <head>
     <title>solrOpt</title>
-    <script type="text/javascript" src="/test/js/jquery/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="${ctx}/js/jquery/jquery-1.12.2.min.js"></script>
     <script type="text/javascript">
         //创建
         function addUser(){
-            var url = "/test/solrUser/addUser";
+            var url = "${ctx}/solrUser/addUser";
             var id = $("#id").val();
             var login_name = $("#login_name").val();
             var password = $("#password").val();
@@ -35,7 +35,7 @@
 
         //查询
         function selectUser(){
-            var url = "/test/solrUser/selectUser";
+            var url = "${ctx}/solrUser/selectUser";
             var loginName = $("#loginNameForSel").val();
             var params={
                 "loginName": loginName
