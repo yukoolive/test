@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>首页</title>
-    <script type="text/javascript" src="/js/jquery/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="${ctx}/js/jquery/jquery-1.12.2.min.js"></script>
     <script type="text/javascript">
         //查询的内容
         function query(){

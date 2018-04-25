@@ -18,7 +18,7 @@ public class UserController {
     @RequestMapping(value = "/findUser",method = RequestMethod.GET)
     @ResponseBody
     public User findUser(String loginName) {
-            System.out.println(loginName);
+            //System.out.println(loginName);
             User user = userService.queryUserByLoginName(loginName);
             return user;
     }

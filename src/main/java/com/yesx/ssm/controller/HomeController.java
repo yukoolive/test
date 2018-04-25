@@ -21,8 +21,8 @@ public class HomeController {
     public String index(HttpSession session, ModelMap map, HttpServletRequest request){
 //        User user = (User) session.getAttribute("user");
 
-        System.out.println(request.getUserPrincipal().getName());
-        System.out.println(SecurityUtils.getSubject().getPrincipal());
+        //System.out.println(request.getUserPrincipal().getName());
+        //System.out.println(SecurityUtils.getSubject().getPrincipal());
 
         User loginUser = userService.queryUserByLoginName(request.getUserPrincipal().getName());
         //System.out.println(JSONObject.toJSONString(loginUser));

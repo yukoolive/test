@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>登录页面</title>
-    <script type="text/javascript" src="/js/jquery/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="${ctx}/js/jquery/jquery-1.12.2.min.js"></script>
 </head>
 <body>
 <h1>login page</h1>

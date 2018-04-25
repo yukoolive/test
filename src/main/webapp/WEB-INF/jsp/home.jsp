@@ -10,7 +10,7 @@
 <html>
 <head>
     <title>首页</title>
-    <script type="text/javascript" src="/js/jquery/jquery-1.12.2.min.js"></script>
+    <script type="text/javascript" src="${ctx}/js/jquery/jquery-1.12.2.min.js"></script>
 </head>
 <body>
 <h1>首页</h1>
@@ -26,6 +26,9 @@
 </shiro:hasPermission>
 <shiro:hasPermission name="/solrUser/list">
     <a href="${ctx}/solrUser/list">搜索引擎</a>
+</shiro:hasPermission>
+<shiro:hasPermission name="/seckill/list">
+    <a href="${ctx}/seckill/list">秒杀列表</a>
 </shiro:hasPermission>
 </body>
 </html>

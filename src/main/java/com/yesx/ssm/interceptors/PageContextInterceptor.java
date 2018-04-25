@@ -24,7 +24,7 @@ public class PageContextInterceptor extends HandlerInterceptorAdapter {
 		// 设置上下文路径
 		String path = request.getContextPath();
 		request.setAttribute("ctx", path);
-		System.out.println("---------------------------ctx:"+request.getAttribute("ctx"));
+		//System.out.println("---------------------------ctx:"+request.getAttribute("ctx"));
 
 	}
 

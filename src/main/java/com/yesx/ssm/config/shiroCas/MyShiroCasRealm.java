@@ -6,6 +6,9 @@ import com.yesx.ssm.mapper.UserMapper;
 import com.yesx.ssm.po.Function;
 import com.yesx.ssm.po.Role;
 import com.yesx.ssm.po.User;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationInfo;
+import org.apache.shiro.authc.AuthenticationToken;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.cas.CasRealm;
@@ -42,19 +45,19 @@ public class MyShiroCasRealm extends CasRealm {
 //     * 1、CAS认证 ,验证用户身份
 //     * 2、将用户基本信息设置到会话中(不用了，随时可以获取的)
 //     */
-//    @Override
-//    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) {
-//
-//        AuthenticationInfo authc = super.doGetAuthenticationInfo(token);
-//
-//        String account = (String) authc.getPrincipals().getPrimaryPrincipal();
-//
-//        User user = userDao.getByName(account);
-//        //将用户信息存入session中
-//        SecurityUtils.getSubject().getSession().setAttribute("user", user);
-//
-//        return authc;
-//    }
+    @Override
+    protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) {
+
+        AuthenticationInfo authc = super.doGetAuthenticationInfo(token);
+
+        String account = (String) authc.getPrincipals().getPrimaryPrincipal();
+
+        User user = userDao.selectUser(account);
+        //将用户信息存入session中
+        SecurityUtils.getSubject().getSession().setAttribute("user", user);
+
+        return authc;
+    }
 
     /**
      * 权限认证，为当前登录的Subject授予角色和权限
